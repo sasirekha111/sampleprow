@@ -1,11 +1,8 @@
-name: "Pull Request Labeler"
-on:
-- pull_request_target
+# labels to be used with /area command
+area:
+  - 'bug'
+  - 'important'
 
-jobs:
-  triage:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/labeler@main
-      with:
-        repo-token: "${{ secrets.GITHUB_TOKEN }}"
+# File globs for PR labeler
+tests:
+  - '**/*.test.ts'
